@@ -23,10 +23,10 @@ img_tags = soup.find_all('img')
 
 # Iterate over the image tags and download the images
 for img_tag in img_tags:
-    # Get the image URL
+# Get the image URL
     img_url = img_tag['src']
 
-    # Save the image to disk
+# Save the image to disk
     try:
         img_data = requests.get(img_url).content
         with open(os.path.join(save_dir, os.path.basename(img_url)), 'wb') as f:
